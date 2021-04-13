@@ -9,10 +9,14 @@
         </button>
       <% end %>
     </div>
-    <ul class="header-list">
-      <li>予　　定</li>
-      <li>メニュー</li>
-      <li>ユーザー名</li>
+  </div>
+  <div class="header-list">
+    <ul>
+      <li><%= link_to '投稿する', '#' %></li>
+      <li><%= link_to '予定の確認', '#' %></li>
+      <li><%= link_to '新規登録', new_user_registration_path %></li>
+      <li><%= link_to 'ログイン', new_user_session_path %></li>
+      <li><%= link_to 'ログアウト', '#' %></li>
     </ul>
   </div>
 </header>
