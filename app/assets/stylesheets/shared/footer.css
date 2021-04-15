@@ -1,0 +1,13 @@
+/* フッター */
+
+.footer{
+  background-color: #f2f2f2;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+.footer-list {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
