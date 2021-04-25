@@ -1,0 +1,7 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        username: ユーザー名
+        name: 名前
+        birthday: 生年月日

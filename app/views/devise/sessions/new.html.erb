@@ -1,0 +1,31 @@
+<%= render "shared/header" %>
+<body>
+  <%= form_with model: @user, url: user_session_path, id: 'login_user', class: 'registration-main', local: true do |f| %>
+    <% if @user.errors.any? %>
+    <% end %>
+      <%= render partial: 'layouts/flash' %>
+      <div class="email-area">
+        <div class="email-label">
+          <p>■  メールアドレス</p>
+        </div>
+        <div class="email-input">
+          <%= f.text_field :email, class:"input-default", id:"email", placeholder:"メールアドレス" %>
+        </div>
+      </div>
+      <div class="password-area">
+        <div class="password-label">
+          <p>■  パスワード</p>
+        </div>
+        <div class="password-input">
+          <%= f.password_field :password, class:"input-default", id:"password", placeholder:"半角英数混合8文字以上" %>
+          <% if @user.errors.include?(:password) %>
+            <p style="color: red;"><%= @user.errors.full_messages_for(:password).first %>
+          <% end %>
+        </div>
+      </div>
+      <div class="register-btn">
+        <%= f.submit "ログイン" ,class:"register-red-btn" %>
+      </div>
+  <% end %>
+</body>
+<%= render "shared/footer" %>

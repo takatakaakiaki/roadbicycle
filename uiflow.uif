@@ -9,7 +9,7 @@ Click_on ログイン
 ==>ログイン
 Click_on 投稿する
 ==>投稿フォーム
-Click_on ユーザー名
+Click_on 予定の確認
 ==>ユーザーのページ
 Click_on 記事のタイトル
 ==>記事の詳細

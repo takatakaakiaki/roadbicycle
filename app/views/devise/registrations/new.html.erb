@@ -1,0 +1,89 @@
+<body>
+  <%= render "shared/header" %>
+    <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'registration-main', local: true do |f| %>
+      <% if @user.errors.any? %>
+      <% end %>
+        <div class="username-area">
+          <div class="username-label">
+            <p>■  ユーザー名</p>
+          </div>
+          <div class="username-input">
+            <%= f.text_field :username, class:"input-default", id:"username", placeholder:"10文字以内", maxlength:"10" %>
+            <% if @user.errors.include?(:username) %>
+              <p style="color: red;"><%= @user.errors.full_messages_for(:username).first %>
+            <% end %>
+          </div>
+        </div>
+        <div class="email-area">
+          <div class="email-label">
+            <p>■  メールアドレス</p>
+          </div>
+          <div class="email-input">
+            <%= f.text_field :email, class:"input-default", id:"email", placeholder:"メールアドレス" %>
+            <% if @user.errors.include?(:email) %>
+              <p style="color: red;"><%= @user.errors.full_messages_for(:email).first %>
+            <% end %>
+          </div>
+        </div>
+        <div class="password-area">
+          <div class="password-label">
+            <p>■  パスワード</p>
+          </div>
+          <div class="password-input">
+            <%= f.password_field :password, class:"input-default", id:"password", placeholder:"半角英数混合8文字以上" %>
+            <% if @user.errors.include?(:password) %>
+              <p style="color: red;"><%= @user.errors.full_messages_for(:password).first %>
+            <% end %>
+          </div>
+        </div>
+        <div class="again-area">
+          <div class="again-label">
+            <p>■  パスワード(確認用)</p>
+          </div>
+          <div class="again-input">
+            <%= f.password_field :password_confirmation, class:"input-default", id:"again", placeholder:"半角英数混合8文字以上" %>
+            <% if @user.errors.include?(:password_confirmation) %>
+              <p style="color: red;"><%= @user.errors.full_messages_for(:password_confirmation).first %>
+            <% end %>
+          </div>
+        </div>
+        <div class="name-area">
+          <div class="name-label">
+            <p>■  お名前</p>
+          </div>
+          <div class="name-input">
+            <%= f.text_field :name, class:"input-default", id:"name", placeholder:"10文字以内", maxlength:"10" %>
+            <% if @user.errors.include?(:name) %>
+              <p style="color: red;"><%= @user.errors.full_messages_for(:name).first %>
+            <% end %>
+          </div>
+        </div>
+        <div class="birth-area">
+          <div class="birth-label">
+            <p>■  生年月日</p>
+          </div>
+          <div class="birth-input">
+            <%= raw sprintf(
+                        f.date_select(
+                          :birthday,
+                          class:'select-birth',
+                          id:"birth-date",
+                          use_month_numbers: true,
+                          prompt:'--',
+                          start_year: 1930,
+                          end_year: (Time.now.year - 5),
+                          date_separator: '%s'),
+                        "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+                        <div class="birth-error">
+                          <% if @user.errors.include?(:birthday) %>
+                            <p style="color: red;"><%= @user.errors.full_messages_for(:birthday).first %>
+                          <% end %>
+                        </div>
+          </div>
+        </div>
+        <div class="register-btn">
+          <%= f.submit "登録する" ,class:"register-red-btn" %>
+        </div>
+    <% end %>
+</body>
+<%= render "shared/footer" %>
