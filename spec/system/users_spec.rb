@@ -165,3 +165,37 @@ RSpec.describe 'ログイン', type: :system do
     end
   end
 end
+
+RSpec.describe 'ログアウト', type: :system do
+  before do
+    @user = FactoryBot.create(:user)
+  end
+
+  context'ログアウトができる'do
+    it 'ヘッダーにあるログアウトをクリックするとログアウトできる' do
+      # トップページへ移動する
+      visit new_user_session_path
+
+      # ユーザー情報を入力する
+      fill_in 'user[email]', with: @user.email 
+      fill_in 'user[password]', with: @user.password 
+
+      # ログインを押す
+      find('input[name="commit"]').click
+
+      # トップページに遷移できたことを確認
+      expect(current_path).to eq(root_path)
+
+      # ヘッダーにユーザー名とログアウトが表示されていることを確認
+      expect(page).to have_content(@user.username)
+      expect(page).to have_content('ログアウト')
+
+      # ログアウトを押すとログアウトができる
+      find_link('ログアウト').click
+
+      # ヘッダーにユーザー名とログアウトが表示されていないことを確認
+      expect(page).to have_no_content(@user.username)
+      expect(page).to have_no_content('ログアウト')
+    end
+  end
+end
