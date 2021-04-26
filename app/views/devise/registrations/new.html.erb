@@ -1,6 +1,6 @@
 <body>
   <%= render "shared/header" %>
-    <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'registration-main', local: true do |f| %>
+    <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'main-form', local: true do |f| %>
       <% if @user.errors.any? %>
       <% end %>
         <div class="username-area">
@@ -81,8 +81,8 @@
                         </div>
           </div>
         </div>
-        <div class="register-btn">
-          <%= f.submit "登録する" ,class:"register-red-btn" %>
+        <div class="user-btn">
+          <%= f.submit "登録する" ,class:"red-btn" %>
         </div>
     <% end %>
 </body>

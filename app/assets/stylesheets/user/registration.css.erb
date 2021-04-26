@@ -1,39 +1,18 @@
+/* 新規登録、ログイン共通 */
+
 body {
   background-color: #f2f2f2;
   height: 100％;
   width: 100%;  
 }
 
-.registration-main {
+.main-form {
   width: 100vw;
   height: 100%;
   margin: 40px;
   border: 10px solid white;
   border-radius: 20px;
   padding: 40px;
-}
-
-.username-area {
-  display: flex;
-}
-
-.username-label {
-  width: 180px;
-  align-items: center;
-  justify-content: left;
-  padding: 30px 80px;
-}
-
-.username-input {
-  justify-content: left;
-  padding: 30px 80px;
-}
-
-.input-default {
-  border: 2px solid #dfdfdf;
-  border-radius: 10px;
-  width: 408px;
-  height: 46px;
 }
 
 .email-area {
@@ -52,6 +31,13 @@ body {
   padding: 30px 80px;
 }
 
+.input-default {
+  border: 2px solid #dfdfdf;
+  border-radius: 10px;
+  width: 408px;
+  height: 46px;
+}
+
 .password-area {
   display: flex;
 }
@@ -64,6 +50,38 @@ body {
 }
 
 .password-input {
+  padding: 30px 80px;
+}
+
+.user-btn{
+  display: flex;
+  justify-content: center;
+}
+
+.red-btn{
+  font-size: 20px;
+  padding: 10px 20px;
+  margin: 10px 10px 5px 10px;
+  border: 2px solid red;
+  border-radius: 20px; 
+}
+
+
+/* 新規登録 */
+
+.username-area {
+  display: flex;
+}
+
+.username-label {
+  width: 180px;
+  align-items: center;
+  justify-content: left;
+  padding: 30px 80px;
+}
+
+.username-input {
+  justify-content: left;
   padding: 30px 80px;
 }
 
@@ -136,17 +154,4 @@ body {
   position: absolute;
   top: 70px;
   left: 90px;
-}
-
-.register-btn{
-  display: flex;
-  justify-content: center;
-}
-
-.register-red-btn{
-  font-size: 20px;
-  padding: 10px 20px;
-  margin: 10px 10px 5px 10px;
-  border: 2px solid red;
-  border-radius: 20px; 
 }
