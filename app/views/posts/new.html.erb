@@ -25,6 +25,20 @@
           <%= f.text_area :text, class:"input-post", id:"text" %>
         </div>
       </div>
+
+      <div class="category-area">
+        <div class="category-label">
+          <p>■  記事の種類</p>
+        </div>
+        <div class="category-input">
+          <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category-box", id:"post-category"}) %>
+        </div>
+      </div>
+
+
+
+
+
       <div class="post-btn">
         <%= f.submit "投稿" ,class:"post-red-btn" %>
       </div>
