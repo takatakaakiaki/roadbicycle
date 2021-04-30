@@ -1,0 +1,33 @@
+<%= render "shared/header" %>
+  <body>
+    <%= form_with model: @post, id: 'new_post', class: 'new-post-form', local: true do |f| %>
+      <div class="image-area">
+        <div class="image-label">
+          <p>■  画像</p>
+        </div>
+        <div class="image-input">
+          <%= f.file_field :image, id:"post-image" %>
+        </div>
+      </div>
+      <div class="title-area">
+        <div class="title-label">
+          <p>■  記事のタイトル</p>
+        </div>
+        <div class="title-input">
+          <%= f.text_field :title, class:"input-post", id:"title" %>
+        </div>
+      </div>
+      <div class="text-area">
+        <div class="text-label">
+          <p>■  記事の内容</p>
+        </div>
+        <div class="text-input">
+          <%= f.text_area :text, class:"input-post", id:"text" %>
+        </div>
+      </div>
+      <div class="post-btn">
+        <%= f.submit "投稿" ,class:"post-red-btn" %>
+      </div>
+    <% end %>
+  </body>
+<%= render "shared/footer" %>

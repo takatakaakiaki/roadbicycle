@@ -1,0 +1,99 @@
+.new-post-form{
+  width: 100vw;
+  height: auto;
+  margin: 40px;
+  border: 10px solid white;
+  border-radius: 20px;
+  padding: 40px;
+  background-image: url("<%= asset_path('new_post_back.png') %>");
+  background-color:rgba(192,192,192,0.5);
+}  
+
+.image-area {
+  display: flex;
+}
+
+.image-label {
+  width: 180px; 
+  align-items: center;
+  justify-content: left;
+  padding: 30px 80px;
+  font-size: 20px;
+  color: black;
+}
+
+.image-input {
+  justify-content: left;  
+  padding: 30px 80px;
+  color: black;
+}
+
+.image-input input {
+  align-items: center;
+  font-size: 20px;
+}
+
+.title-area {
+  display: flex;
+}
+
+.title-label {
+  width: 180px; 
+  align-items: center;
+  justify-content: left;
+  padding: 30px 80px;
+  font-size: 20px;
+  color: black;
+}
+
+.title-input {
+  justify-content: left;  
+  padding: 30px 80px;
+}
+
+input[type="text"][name="title"] {
+  width: 500px;
+}
+
+.input-post {
+  border: 2px solid #dfdfdf;
+  border-radius: 10px;
+}
+
+.text-area {
+  display: flex;
+}
+
+.text-label {
+  width: 180px; 
+  align-items: center;
+  justify-content: left;
+  padding: 30px 80px;
+  font-size: 20px;
+  color: black;
+  text-shadow:3px 3px 3px #CCCCCC;  
+}
+
+.text-input {
+  justify-content: left;  
+  padding: 30px 80px;
+}
+
+textarea[name="text"]{
+  width: 500px;
+  height: 300px;
+}
+
+.post-btn{
+  display: flex;
+  justify-content: center;
+}
+
+.post-red-btn{
+  font-size: 20px;
+  padding: 10px 20px;
+  margin: 10px 10px 5px 10px;
+  border: 2px solid red;
+  border-radius: 20px;
+  width: 150px; 
+}

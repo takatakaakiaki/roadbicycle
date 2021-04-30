@@ -8,7 +8,7 @@
             <p>■  ユーザー名</p>
           </div>
           <div class="username-input">
-            <%= f.text_field :username, class:"input-default", id:"username", placeholder:"10文字以内", maxlength:"10" %>
+            <%= f.text_field :username, class:"input-user", id:"username", placeholder:"10文字以内", maxlength:"10" %>
             <% if @user.errors.include?(:username) %>
               <p style="color: red;"><%= @user.errors.full_messages_for(:username).first %>
             <% end %>
@@ -19,7 +19,7 @@
             <p>■  メールアドレス</p>
           </div>
           <div class="email-input">
-            <%= f.text_field :email, class:"input-default", id:"email", placeholder:"メールアドレス" %>
+            <%= f.text_field :email, class:"input-user", id:"email", placeholder:"メールアドレス" %>
             <% if @user.errors.include?(:email) %>
               <p style="color: red;"><%= @user.errors.full_messages_for(:email).first %>
             <% end %>
@@ -30,7 +30,7 @@
             <p>■  パスワード</p>
           </div>
           <div class="password-input">
-            <%= f.password_field :password, class:"input-default", id:"password", placeholder:"半角英数混合8文字以上" %>
+            <%= f.password_field :password, class:"input-user", id:"password", placeholder:"半角英数混合8文字以上" %>
             <% if @user.errors.include?(:password) %>
               <p style="color: red;"><%= @user.errors.full_messages_for(:password).first %>
             <% end %>
@@ -41,7 +41,7 @@
             <p>■  パスワード(確認用)</p>
           </div>
           <div class="again-input">
-            <%= f.password_field :password_confirmation, class:"input-default", id:"again", placeholder:"半角英数混合8文字以上" %>
+            <%= f.password_field :password_confirmation, class:"input-user", id:"again", placeholder:"半角英数混合8文字以上" %>
             <% if @user.errors.include?(:password_confirmation) %>
               <p style="color: red;"><%= @user.errors.full_messages_for(:password_confirmation).first %>
             <% end %>
@@ -52,7 +52,7 @@
             <p>■  お名前</p>
           </div>
           <div class="name-input">
-            <%= f.text_field :name, class:"input-default", id:"name", placeholder:"10文字以内", maxlength:"10" %>
+            <%= f.text_field :name, class:"input-user", id:"name", placeholder:"10文字以内", maxlength:"10" %>
             <% if @user.errors.include?(:name) %>
               <p style="color: red;"><%= @user.errors.full_messages_for(:name).first %>
             <% end %>

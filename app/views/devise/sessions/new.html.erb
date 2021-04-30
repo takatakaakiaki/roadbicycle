@@ -9,7 +9,7 @@
           <p>■  メールアドレス</p>
         </div>
         <div class="email-input">
-          <%= f.text_field :email, class:"input-default", id:"email", placeholder:"メールアドレス" %>
+          <%= f.text_field :email, class:"input-user", id:"email", placeholder:"メールアドレス" %>
         </div>
       </div>
       <div class="password-area">
@@ -17,7 +17,7 @@
           <p>■  パスワード</p>
         </div>
         <div class="password-input">
-          <%= f.password_field :password, class:"input-default", id:"password", placeholder:"半角英数混合8文字以上" %>
+          <%= f.password_field :password, class:"input-user", id:"password", placeholder:"半角英数混合8文字以上" %>
           <% if @user.errors.include?(:password) %>
             <p style="color: red;"><%= @user.errors.full_messages_for(:password).first %>
           <% end %>
