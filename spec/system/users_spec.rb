@@ -142,7 +142,9 @@ RSpec.describe 'ログイン', type: :system do
       expect(page).to have_no_content('ログイン')
       expect(page).to have_no_content('新規登録')
     end
+  end
 
+  context 'ログインできない' do
     it '誤った情報を入力するとログインはできない' do
       # ログインページへ移動する
       visit new_user_session_path
