@@ -54,7 +54,7 @@
   padding: 30px 80px;
 }
 
-input[type="text"][name="title"] {
+input[type="text"][name="post[title]"] {
   width: 500px;
   font-size: 16px;
 }
@@ -62,6 +62,12 @@ input[type="text"][name="title"] {
 .input-post {
   border: 2px solid #dfdfdf;
   border-radius: 10px;
+}
+
+.title-input p {
+  width: 230px;
+  background-color:rgba(0,255,255,0.7);
+  flex-basis: auto;
 }
 
 .text-area {
@@ -85,10 +91,15 @@ input[type="text"][name="title"] {
   padding: 30px 80px;
 }
 
-textarea[name="text"]{
+textarea[name="post[text]"]{
   width: 500px;
   height: 300px;
   font-size: 16px;
+}
+
+.text-input p {
+  width: 200px;
+  background-color:rgba(0,255,255,0.7);
 }
 
 .category-area {
@@ -117,6 +128,11 @@ textarea[name="text"]{
   height: 35px;
   align-items: center;
   font-size: 16px;
+}
+
+.category-input p {
+  width: 230px;
+  background-color:rgba(0,255,255,0.7);
 }
 
 .post-btn{

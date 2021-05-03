@@ -1,9 +1,8 @@
 /* メイン */
 
 .main-contents {
-  height: 70vh;
+  height: auto;
   text-align: center;
-  font-size: 25px;  
   color: black;
   background-image: url("<%= asset_path('mainback.png') %>");
   background-color:rgba(192,192,192,0.5);
@@ -12,6 +11,20 @@
 }
 
 .main-contents p{
+  font-size: 35px;
   margin: 0 auto;
   padding: 40px 20px;
+}
+
+.post-list {
+  display: flex;
+}
+
+.list {
+  width: auto;
+  flex-basis: auto;
+  font-size: 20px;
+  text-align: left;
+  margin: 20px 20px 20px 150px;
+  background-color:rgba(192,192,192,0.7);
 }

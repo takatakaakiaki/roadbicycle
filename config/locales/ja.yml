@@ -5,3 +5,7 @@ ja:
         username: ユーザー名
         name: 名前
         birthday: 生年月日
+      post:
+        title: タイトル
+        text: 内容
+        category_id: 記事の種類
