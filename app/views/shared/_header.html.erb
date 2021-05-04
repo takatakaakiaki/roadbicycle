@@ -13,12 +13,12 @@
   <div class="header-list">
     <ul>
       <% if user_signed_in? %>
-        <li><%= link_to '投稿する', '#' %></li>
+        <li><%= link_to '投稿する', new_post_path %></li>
         <li><%= link_to '予定の確認', '#' %></li>
         <li><%= link_to current_user.username, "#" %> </li>
         <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
       <% else %>
-        <li><%= link_to '投稿する', '#' %></li>
+        <li><%= link_to '投稿する', new_post_path %></li>
         <li><%= link_to '予定の確認', '#' %></li>
         <li><%= link_to '新規登録', new_user_registration_path %></li>
         <li><%= link_to 'ログイン', new_user_session_path %></li>

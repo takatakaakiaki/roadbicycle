@@ -2,7 +2,23 @@
 
   <div class="main-contents">
     <p>新着記事50件</p>
+    <% if @posts.present? %>
+      <% @posts.each do |post| %>
+        <li class="post-list">
+          <div class="list">
+            <%= "#{post.title} 投稿者：#{post.user.username}さん" %>
+          </div>
+        </li>
+      <% end %>
+    <% end %>
+  
+    <% if @posts.length == 0 %>
+      <li class="post-list">
+        <div class="list">
+          <%= "記事はありません" %>
+        </div>
+      </li>
+    <% end %>
   </div>
-
 
 <%= render "shared/footer" %>

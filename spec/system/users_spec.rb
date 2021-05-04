@@ -1,5 +1,11 @@
 require 'rails_helper'
 
+def basic_pass
+  username = ENV['BASIC_AUTH_USER']
+  password = ENV['BASIC_AUTH_PASSWORD']
+  visit "http://#{username}:#{password}@#{Capybara.current_session.server.host}:#{Capybara.current_session.server.port}#{path}"
+end
+
 RSpec.describe "Users", type: :system do
   before do
     @user = FactoryBot.build(:user)
@@ -7,6 +13,9 @@ RSpec.describe "Users", type: :system do
 
   context 'ユーザー新規登録ができる' do
     it '正しい情報を入力するとユーザーの新規登録ができる' do
+      # Basic認証の入力をする
+      basic_pass
+
       # トップページへ移動
       visit root_path
         
@@ -133,7 +142,9 @@ RSpec.describe 'ログイン', type: :system do
       expect(page).to have_no_content('ログイン')
       expect(page).to have_no_content('新規登録')
     end
+  end
 
+  context 'ログインできない' do
     it '誤った情報を入力するとログインはできない' do
       # ログインページへ移動する
       visit new_user_session_path
