@@ -49,4 +49,11 @@
       </div>
     <% end %>
   </body>
-<%= render "shared/footer" %>
+
+<div class="footer">
+  <ul class="footer-list">
+    <li><%= link_to '●トップページへ', root_path, data: { confirm: '下書きを保存しますか？'}, class: "btn btn-lg btn-primary" %></li>
+    <li>●メニュー</li>
+    <li>●ユーザー名</li>      
+  </ul>
+</div>
